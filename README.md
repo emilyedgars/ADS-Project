@@ -34,7 +34,7 @@ The information about the students/users registered in our app comes from a Goog
 You can download the answers of the survey recorded as a dataset from: 
 
 # INSTRUCTIONS:
-For those interested in understanding and exploring the algorithms used, the complete version of the code is found in the 'CODE' foulder inside this repository. This code is done using Python, therefore it is advised to open it using a Python environment such as Pycharm. To install Pycharm click on [Download](https://www.jetbrains.com/es-es/pycharm/). 
+For those interested in understanding and exploring the algorithms used, the complete version of the code is found in the 'Algorithm' folder inside this repository. This code is done using Python, therefore it is advised to open it using a Python environment such as Pycharm. To install Pycharm click on [Download](https://www.jetbrains.com/es-es/pycharm/). 
 
 Then, open it in your device, create a new project and give it a name, for example 'PycharmProject'. 
 
