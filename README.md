@@ -25,9 +25,9 @@ What is Binary Search?
 
 Is an algorithm for finding a target value within a sorted array. It compares the target value to the middle element of the array and eliminates half of the remaining elements based on the comparison. This process repeats until the target is found or the search space is empty. To gain a better understanding go to [GeeksForGeeks](https://www.geeksforgeeks.org/binary-search/).
 
-Datasets:
+# Datasets:
 
-The datasets containing all the appartments information can be found in: 
+The datasets containing all the appartments information can be found in the 'Resources Dataset' foulder inside this repository.
 
 The information about the students/users registered in our app comes from a Google forms survey: [here](https://docs.google.com/forms/d/e/1FAIpQLSdSy_nhyyBdQ4avUhnSphkRRb2X5sBGxJgc9Er5y6-B6ADczA/viewform?).
 
