@@ -1,5 +1,7 @@
 import pandas as pd
 import random
+import pandas as pd
+import random
 
 def creatdata():
     random.seed(42)
@@ -14,11 +16,11 @@ def creatdata():
         'Rooms': [random.randint(1, 5) for _ in range(num_houses)],
         'Bathrooms': [random.randint(1, 3) for _ in range(num_houses)],
         'Area': [round(random.uniform(80, 400), 2) for _ in range(num_houses)],
-        'Pets': [random.choice([True] * 20 + [False] * 80) for _ in range(num_houses)]
+        'Pets': [random.choice(['yes', 'no']) for _ in range(num_houses)]
     }
 
     # Ensure that 80% of the houses don't allow pets
-    data['Pets'].count(False) >= 0.8 * num_houses
+    data['Pets'].count('no') >= 0.8 * num_houses
 
     # Ensure that the number of bathrooms is <= number of rooms
     data['Bathrooms'] = [min(rooms, bathrooms) for rooms, bathrooms in zip(data['Rooms'], data['Bathrooms'])]
@@ -40,6 +42,7 @@ def creatdata():
 
     data['Price'] = [round(min(random.uniform(300, 3000), 2000), 2) for _ in range(num_houses)]
     return pd.DataFrame(data)
+
 def quicksort(indices, my_list, property_values=None):
     # If property_values is not provided, initialize it based on my_list
     if property_values is None:
@@ -138,21 +141,67 @@ def filter_house_by_pet(house_data, pet_preference):
     else:
         return house_data
 
+def user_data():
+    # Ask if the user wants to find a roommate with a perfect match
+    find_roommate = input("Would you like to find a roommate with a perfect match? (yes/no): ")
 
+    if find_roommate.lower() == 'yes':
+        # Gather user information
+        print("Great! Let's find you a perfect roommate.")
+        name = input("Enter your name: ")
+        gender = input("Enter your gender (female/male/other): ")
+        age = int(input("Enter your age: "))
+        extraversion = input("Enter your extraversion level (Introvert/Extrovert/Ambivert): ")
+        pet_preference = input("Do you want a house that allows pets? (yes/no): ")
+        region = input("Where are you from? (North America/South America/Europe/Africa/Asia-Pacific): ")
+        budget = float(input("What is your maximum budget for an apartment?: "))
+        location = input("What is your preferred location for an apartment? (Chueca/Gran Via/Salamanca/Chamberí/Chamartín): ")
+
+        # Create a dictionary with user information
+        user_info = {
+            'Name': [name],
+            'Gender': [gender],
+            'Age': [age],
+            'Extraversion': [extraversion],
+            'Pets': [pet_preference.lower() == 'yes'],
+            'Region': [region],
+            'Budget': [budget],
+            'Location': [location]
+        }
+
+        # Create a DataFrame from the user information
+        user_df = pd.DataFrame(user_info)
+
+        # Append the new user information to the existing CSV file
+        user_df.to_csv('/Users/emilyedgars/PycharmProjects/pythonProject/roommates.csv (fragment)', mode='a', header=False, index=False)
+        return user_df
+
+    else:
+        print("Let's proceed without finding a roommate, here is a list of possible houses according to your interests!")
+        return None  # Return None to indicate no user information
 def main():
     houses_data = creatdata()
     print(houses_data.head())
 
     print("Above is a quick look at our data \n")
 
+    # Get user preferences
     min_price, max_price = map(float, input("What is your budget range(separate by comma): ").split(","))
     filtered_houses = filter_houses_by_budget(houses_data, min_price, max_price)
 
-    min_area, max_area = map(float, input("What is your area range(separate by comma): ").split(","))
+    min_area, max_area = map(float, input("What is the size of the apartment you are looking for? (specify in square meters and separate by comma): ").split(","))
     filtered_houses = filter_houses_by_area(filtered_houses, min_area, max_area)
 
-    pet_prefrence = input("Do you have a pet?(yes,no) ")
-    filtered_houses = filter_house_by_pet(filtered_houses, pet_prefrence)
+    pet_preference = input("Do you have a pet? (yes/no): ")
+    filtered_houses = filter_house_by_pet(filtered_houses, pet_preference)
+
+    # Get user data
+    user_df = user_data()
+
+    if user_df is not None:
+        # Display user data
+        print("\nUser Information:\n")
+        print(user_df)
 
     print("\nHere is a list of possible houses according to your interests:\n")
     print(filtered_houses)
