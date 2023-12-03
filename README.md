@@ -23,7 +23,15 @@ It is an algorithm that sorts an array using a [Divide and Conquer](https://www.
 
 What is Binary Search?
 
-Is an algorithm for finding a target value within a sorted array. It compares the target value to the middle element of the array and eliminates half of the remaining elements based on the comparison. This process repeats until the target is found or the search space is empty. To gain a better understanding go to [GeeksForGeeks](https://www.geeksforgeeks.org/binary-search/).
+Is an algorithm for finding a target value within a sorted array. It compares the target value to the middle element of the array and eliminates half of the remaining elements based on the comparison. This process repeats until the target is found or the search space is empty. To gain a better understanding go to [GeeksForGeeks](https://www.geeksforgeeks.org/binary-search/). This algorithm will be used when looking for an appartment that meets all the users expectations and also when selecting the roommate.
+
+What is Object Orientated Programming (OOP)?
+
+Is a programming paradigm which allow us to provide properties (attributes) and behaviours (methods) to individual objects. For example, an object could represent a person with a name property, age, address, etc., with behaviors like walking, talking, breathing, and running. Or an email with properties like recipient list, subject, body, etc., and behaviors like adding attachments and sending. For more information click [here](https://www.geeksforgeeks.org/introduction-of-object-oriented-programming/).
+
+Dictionaries:
+
+A dictionary is a data structure that stores elements as key-value pairs, where each key is unique and associated with a corresponding value. Dictionaries are commonly used in computer programming to organize and manage data in a way that facilitates quick access to information.
 
 # Datasets:
 
