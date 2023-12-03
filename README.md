@@ -15,7 +15,7 @@ We created a database filled with many appartments available, each one with uniq
 <img width="400" alt="image" src="https://github.com/emilyedgars/ADS-Project/assets/152634583/fe39b213-7144-441b-87f8-2de448386cb8">
 
 
-Algorithms:
+# Algorithms:
 
 What is quicksort?
 
