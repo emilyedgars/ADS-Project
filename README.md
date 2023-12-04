@@ -12,9 +12,6 @@ What does our program do?:
 
 We created a database filled with many appartments available, each one with unique features like price, location, and number of rooms/bathrooms, etc. The user will be asked to input the price range they are willing to pay as well as other especifications. Our code will use quicksort and binary search algorithms to create a new dataset to quickly narrow down the housing options using the inputs as a reference. Then, the user will again be asked some question related to the type of person they are looking for to be their roommate (age, gender, personality type, etc.). Our program will take into account both the houses selected and the roomate characteristic to output the ideal solution. The information about the other users that will be possible matches are recorded previously using a survey and added into a dataset.
 
-<img width="400" alt="image" src="https://github.com/emilyedgars/ADS-Project/assets/152634583/fe39b213-7144-441b-87f8-2de448386cb8">
-
-
 # Algorithms:
 
 What is quicksort?
@@ -32,6 +29,21 @@ Is a programming paradigm which allow us to provide properties (attributes) and 
 Dictionaries:
 
 A dictionary is a data structure that stores elements as key-value pairs, where each key is unique and associated with a corresponding value. Dictionaries are commonly used in computer programming to organize and manage data in a way that facilitates quick access to information.
+
+```
+        # Create a dictionary with user information
+        user_info = {
+            'Name': [name],
+            'Gender': [gender],
+            'Age': [age],
+            'Extraversion': [extraversion],
+            'Pets': [pet_preference.lower() == 'yes'],
+            'Region': [region],
+            'Budget': [budget],
+            'Location': [location]
+        }
+```
+This is an example from our real code to show the structure of a dictionary.
 
 # Datasets:
 
