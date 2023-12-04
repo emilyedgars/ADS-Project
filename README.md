@@ -30,7 +30,7 @@ Dictionaries:
 
 A dictionary is a data structure that stores elements as key-value pairs, where each key is unique and associated with a corresponding value. Dictionaries are commonly used in computer programming to organize and manage data in a way that facilitates quick access to information.
 
-```
+``` 
         # Create a dictionary with user information
         user_info = {
             'Name': [name],
