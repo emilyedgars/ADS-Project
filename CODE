@@ -1,12 +1,11 @@
 import pandas as pd
 import random
-import pandas as pd
-import random
+import numpy as np
 
 def creatdata():
     random.seed(42)
 
-    num_houses = 200
+    num_houses = 1000
 
     locations = ['Chueca', 'Gran Vía', 'Salamanca', 'Chamberí', 'Chamartín']
 
@@ -18,7 +17,6 @@ def creatdata():
         'Area': [round(random.uniform(80, 400), 2) for _ in range(num_houses)],
         'Pets': [random.choice(['yes', 'no']) for _ in range(num_houses)]
     }
-
     # Ensure that 80% of the houses don't allow pets
     data['Pets'].count('no') >= 0.8 * num_houses
 
@@ -110,6 +108,7 @@ def filter_houses_by_budget(houses_data, min_price, max_price):
         return filtered_houses
     else:
         return pd.DataFrame()
+
 def filter_houses_by_area(houses_data, min_area, max_area):
     areas = houses_data['Area'].tolist()
     indices = list(range(len(areas)))
@@ -134,12 +133,18 @@ def filter_houses_by_area(houses_data, min_area, max_area):
         return filtered_houses
     else:
         return pd.DataFrame()
+
 def filter_house_by_pet(house_data, pet_preference):
     if pet_preference == 'yes':
-        selected_rows = house_data[house_data['Pets'] == True]
+        selected_rows = house_data[house_data['Pets'] == 'yes']
         return selected_rows
     else:
-        return house_data
+        selected_rows = house_data[house_data['Pets'] == 'no']
+        return selected_rows
+
+def filter_house_by_rooms(house_data, roomnumber):
+    filtered_houses = house_data.loc[house_data['Rooms'] == roomnumber]
+    return filtered_houses
 
 def user_data():
     # Ask if the user wants to find a roommate with a perfect match
@@ -163,7 +168,7 @@ def user_data():
             'Gender': [gender],
             'Age': [age],
             'Extraversion': [extraversion],
-            'Pets': [pet_preference.lower() == 'yes'],
+            'Pets': [pet_preference],
             'Region': [region],
             'Budget': [budget],
             'Location': [location]
@@ -173,12 +178,47 @@ def user_data():
         user_df = pd.DataFrame(user_info)
 
         # Append the new user information to the existing CSV file
-        user_df.to_csv('/Users/emilyedgars/PycharmProjects/pythonProject/roommates.csv (fragment)', mode='a', header=False, index=False)
         return user_df
 
     else:
         print("Let's proceed without finding a roommate, here is a list of possible houses according to your interests!")
         return None  # Return None to indicate no user information
+    return user_df
+
+from google.colab import files
+import pandas as pd
+
+# Upload the 'roommates.csv' file
+uploaded = files.upload()
+
+# Read the uploaded file into a DataFrame
+all_users_df = pd.read_csv(next(iter(uploaded)))
+
+# Display the first few rows of the DataFrame
+all_users_df.head()
+
+def find_roommates(user_df, all_users_df):
+    # Extract user preferences
+    user_extraversion = user_df['Extraversion'].iloc[0]
+    user_pets = user_df['Pets'].iloc[0]
+    user_region = user_df['Region'].iloc[0]
+    user_location = user_df['Location'].iloc[0]
+
+
+    # Filter potential roommates based on compatibility
+    potential_roommates_df = all_users_df[
+        (all_users_df['Pets'] == user_pets) &
+        (all_users_df['Region'] == user_region) &
+        (all_users_df['Location'] == user_location)
+    ]
+
+    return potential_roommates_df
+
+def gender_preference(user_df,all_users_df):
+  user_gender = user_df['Gender'].iloc[0]
+  potential_roommates = all_users_df[all_users_df['Gender']==user_gender]
+  return potential_roommates
+
 def main():
     houses_data = creatdata()
     print(houses_data.head())
@@ -195,6 +235,9 @@ def main():
     pet_preference = input("Do you have a pet? (yes/no): ")
     filtered_houses = filter_house_by_pet(filtered_houses, pet_preference)
 
+    roomnum = int(input("How many rooms do you want in your apartment: "))
+    filtered_houses = filter_house_by_rooms(filtered_houses, roomnum)
+
     # Get user data
     user_df = user_data()
 
@@ -205,5 +248,15 @@ def main():
 
     print("\nHere is a list of possible houses according to your interests:\n")
     print(filtered_houses)
+
+    print('\n')
+
+    dataset = all_users_df
+    roommates = find_roommates(user_df,dataset)
+    gender_pref = input("Do you want to be matched to the same gender (yes/no): ")
+    if gender_pref == 'yes':
+      return gender_preference(user_df,potential_roommates)
+
+    print("Potential Roommates:\n", potential_roommates)
 
 main()
