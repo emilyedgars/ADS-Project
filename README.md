@@ -3,7 +3,7 @@ This project is an integral part of the Algorithms and Data Structures course. I
 
 Introduction to EasyHome.
 
-Welcome to EasyHome, your go-to app for simplifying the apartment search process and connecting with the perfect roommate. Although designed for international users, it can be used by anyone. EasyHome is dedicated to helping you find not just a place to live, but also someone that complemets to your lifestyle. Explore our user-friendly platform to discover ideal apartments and compatible roommates. EasyHome relies on the lastest algorithmic techniques, using quicksort, binary search, dictionaries, and OOP, to find an appartment that checks all of your boxes.
+Welcome to EasyHome, your go-to app for simplifying the apartment search process and connecting with the perfect roommate. Although designed for international users, it can be used by anyone. EasyHome is dedicated to helping you find not just a place to live, but also someone that complemets to your lifestyle. EasyHome relies on the lastest algorithmic techniques, using quicksort, binary search, dictionaries, and OOP, to find an appartment that checks all of your boxes.
 
 <img width="380" alt="image" src="https://github.com/emilyedgars/ADS-Project/assets/152634583/b34854b0-e568-4ade-b131-94684540777d"> <img width="389" alt="image" src="https://github.com/emilyedgars/ADS-Project/assets/152634583/938e447b-a775-4ba2-9ce4-178fc5cfe0a4">
 
