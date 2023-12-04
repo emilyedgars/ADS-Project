@@ -47,11 +47,14 @@ This is an example from our real code to show the structure of a dictionary.
 
 # Datasets:
 
-The datasets containing all the appartments information can be found in the 'Resources Dataset' folder inside this repository.
+The datasets containing all the appartments information is generated randomly in the code:
+```
+
+```
 
 The information about the students/users registered in our app comes from a Google forms survey: [here](https://docs.google.com/forms/d/e/1FAIpQLSdSy_nhyyBdQ4avUhnSphkRRb2X5sBGxJgc9Er5y6-B6ADczA/viewform?).
 
-You can download the answers of the survey recorded as a dataset from: 
+You can find the answers of the survey in the form of a dataset n the 'Resources Dataset' folder inside this repository.
 
 # INSTRUCTIONS:
 For those interested in understanding and exploring the algorithms used, the complete version of the code is found in the 'Algorithm' folder inside this repository. This code is done using Python, therefore it is advised to open it using a Python environment such as Pycharm. To install Pycharm click on [Download](https://www.jetbrains.com/es-es/pycharm/). 
