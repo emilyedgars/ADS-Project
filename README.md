@@ -3,7 +3,7 @@ This project is an integral part of the Algorithms and Data Structures course. I
 
 Introduction to EasyHome.
 
-Welcome to EasyHome, your go-to app for simplifying the apartment search process and connecting with the perfect roommate. Although designed for international users, it can be used by anyone. EasyHome is dedicated to helping you find not just a place to live, but also someone that complemets to your lifestyle. Explore our user-friendly platform to discover ideal apartments and compatible roommates. EasyHome relies on the lastest algorithmic techniques, using quicksort, binary search, trees, and OOP, to find an appartment that checks all of your boxes.
+Welcome to EasyHome, your go-to app for simplifying the apartment search process and connecting with the perfect roommate. Although designed for international users, it can be used by anyone. EasyHome is dedicated to helping you find not just a place to live, but also someone that complemets to your lifestyle. Explore our user-friendly platform to discover ideal apartments and compatible roommates. EasyHome relies on the lastest algorithmic techniques, using quicksort, binary search, dictionaries, and OOP, to find an appartment that checks all of your boxes.
 
 <img width="380" alt="image" src="https://github.com/emilyedgars/ADS-Project/assets/152634583/b34854b0-e568-4ade-b131-94684540777d"> <img width="389" alt="image" src="https://github.com/emilyedgars/ADS-Project/assets/152634583/938e447b-a775-4ba2-9ce4-178fc5cfe0a4">
 
@@ -16,11 +16,11 @@ We created a database filled with many appartments available, each one with uniq
 
 What is quicksort?
 
-It is an algorithm that sorts an array using a [Divide and Conquer](https://www.geeksforgeeks.org/divide-and-conquer/) approach. How does it work? It randomly selects a number that goes from 0 to the number of elements in the list-1. This number will correspond to the position where the pivot is located in the list. The array is then partitioned into two sub-lists, one with elements smaller than the pivot, and, the other  with elements that are greater. This process is applied recursively to each sub-list, using different pivots each time, until reaching sub-arrays with one or no elements. Through this iterative or recursive method, the entire array becomes sorted. This algorithm will be applied when wanting to create the narrowed version of the appartments dataset - by sorting by price (Quicksort).
+It is an algorithm that sorts an array using a [Divide and Conquer](https://www.geeksforgeeks.org/divide-and-conquer/) approach. How does it work? It randomly selects a number that goes from 0 to the number of elements in the list-1. This number will correspond to the position where the pivot is located in the list. The array is then partitioned into two sub-lists, one with elements smaller than the pivot, and, the other  with elements that are greater than the pivot. This process is applied recursively to each sub-list, using different pivots each time, until reaching sub-arrays with one or no elements. Through this iterative or recursive method, the entire array becomes sorted. This algorithm will be applied when wanting to create the narrowed version of the appartments dataset - by sorting by price (Quicksort).
 
 What is Binary Search?
 
-Is an algorithm for finding a target value within a sorted array. It compares the target value to the middle element of the array and eliminates half of the remaining elements based on the comparison. This process repeats until the target is found or the search space is empty. To gain a better understanding go to [GeeksForGeeks](https://www.geeksforgeeks.org/binary-search/). This algorithm will be used when looking for an appartment that meets all the users expectations and also when selecting the roommate.
+Is an algorithm for finding a target value within a sorted array. It compares the target value to the middle element of the array and eliminates half of the remaining elements based on the comparison. This process repeats until the target is found. To gain a better understanding go to [GeeksForGeeks](https://www.geeksforgeeks.org/binary-search/). This algorithm will be used when looking for an appartment that meets all the users expectations and also when selecting the roommate.
 
 What is Object Orientated Programming (OOP)?
 
@@ -28,7 +28,7 @@ Is a programming paradigm which allow us to provide properties (attributes) and 
 
 Dictionaries:
 
-A dictionary is a data structure that stores elements as key-value pairs, where each key is unique and associated with a corresponding value. Dictionaries are commonly used in computer programming to organize and manage data in a way that facilitates quick access to information.
+A dictionary is a data structure that stores elements as key-value pairs, where each key is unique and associated with a corresponding value.
 
 ``` 
         # Create a dictionary with user information
