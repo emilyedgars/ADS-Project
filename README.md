@@ -49,8 +49,19 @@ This is an example from our real code to show the structure of a dictionary.
 
 The datasets containing all the appartments information is generated randomly in the code:
 ```
-
+random.seed(42)
+num_houses = 200
+locations = ['Chueca', 'Gran Vía', 'Salamanca', 'Chamberí', 'Chamartín']
+data = {
+        'Location': [random.choice(locations) for _ in range(num_houses)],
+        'Price': [round(random.uniform(300, 3000), 2) for _ in range(num_houses)],
+        'Rooms': [random.randint(1, 5) for _ in range(num_houses)],
+        'Bathrooms': [random.randint(1, 3) for _ in range(num_houses)],
+        'Area': [round(random.uniform(80, 400), 2) for _ in range(num_houses)],
+        'Pets': [random.choice(['yes', 'no']) for _ in range(num_houses)]
+    }
 ```
+This code hows us how the data is randomly created. However, to see the complete version of the code and the function that contains it please go to the 'CODE' foulder inside this repository.
 
 The information about the students/users registered in our app comes from a Google forms survey: [here](https://docs.google.com/forms/d/e/1FAIpQLSdSy_nhyyBdQ4avUhnSphkRRb2X5sBGxJgc9Er5y6-B6ADczA/viewform?).
 
