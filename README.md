@@ -16,7 +16,7 @@ We created a database filled with many appartments available, each one with uniq
 
 What is quicksort?
 
-It is an algorithm that sorts an array using a [Divide and Conquer](https://www.geeksforgeeks.org/divide-and-conquer/) approach. How does it work? It randomly selects a number that goes from 0 to the number of elements in the list-1. This number will correspond to the position where the pivot is located in the list. The array is then partitioned into two sub-lists, one with elements smaller than the pivot, and, the other  with elements that are greater than the pivot. This process is applied recursively to each sub-list, using different pivots each time, until reaching sub-arrays with one or no elements. Through this iterative or recursive method, the entire array becomes sorted. This algorithm will be applied when wanting to create the narrowed version of the appartments dataset - by sorting by price (Quicksort).
+It is an algorithm that sorts an array using a [Divide and Conquer](https://www.geeksforgeeks.org/divide-and-conquer/) approach. How does it work? It randomly selects a number that goes from 0 to the number of elements in the list-1. This number will correspond to the position where the pivot is located in the list. The array is then partitioned into two sub-lists, one with elements smaller than the pivot, and, the other  with elements that are greater than the pivot. This process is applied recursively to each sub-list, using different pivots each time, until reaching sub-arrays with one or no elements. Through this iterative or recursive method, the entire array becomes sorted. This algorithm will be applied when wanting to create the narrowed version of the appartments dataset - sorting by price (Quicksort).
 
 What is Binary Search?
 
@@ -61,14 +61,14 @@ data = {
         'Pets': [random.choice(['yes', 'no']) for _ in range(num_houses)]
     }
 ```
-This code hows us how the data is randomly created. However, to see the complete version of the code and the function that contains it please go to the 'CODE' foulder inside this repository.
+This code shows us how the data is randomly created. However, to see the complete version of the code and the function that contains it please go to the 'CODE' foulder inside this repository.
 
 The information about the students/users registered in our app comes from a Google forms survey: [here](https://docs.google.com/forms/d/e/1FAIpQLSdSy_nhyyBdQ4avUhnSphkRRb2X5sBGxJgc9Er5y6-B6ADczA/viewform?).
 
-You can find the answers of the survey in the form of a dataset n the 'Resources Dataset' folder inside this repository.
+You can find the answers of the survey in the form of a dataset in the 'Resources Dataset' folder inside this repository.
 
 # INSTRUCTIONS:
-For those interested in understanding and exploring the algorithms used, the complete version of the code is found in the 'Algorithm' folder inside this repository. This code is done using Python, therefore it is advised to open it using a Python environment such as Pycharm. To install Pycharm click on [Download](https://www.jetbrains.com/es-es/pycharm/). 
+For those interested in understanding and exploring the algorithms used, the complete version of the code is found in the 'CODE' folder inside this repository. This code is done using Python, therefore it is advised to open it using a Python environment program such as Pycharm. To install Pycharm click on [Download](https://www.jetbrains.com/es-es/pycharm/). 
 
 Then, open it in your device, create a new project and give it a name, for example 'PycharmProject'. 
 
