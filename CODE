@@ -15,10 +15,10 @@ def creatdata():
         'Rooms': [random.randint(1, 5) for _ in range(num_houses)],
         'Bathrooms': [random.randint(1, 3) for _ in range(num_houses)],
         'Area': [round(random.uniform(80, 400), 2) for _ in range(num_houses)],
-        'Pets': [random.choice(['yes', 'no']) for _ in range(num_houses)]
+        'Pets': [random.choice(['Yes', 'No']) for _ in range(num_houses)]
     }
     # Ensure that 80% of the houses don't allow pets
-    data['Pets'].count('no') >= 0.8 * num_houses
+    data['Pets'].count('No') >= 0.8 * num_houses
 
     # Ensure that the number of bathrooms is <= number of rooms
     data['Bathrooms'] = [min(rooms, bathrooms) for rooms, bathrooms in zip(data['Rooms'], data['Bathrooms'])]
@@ -135,11 +135,11 @@ def filter_houses_by_area(houses_data, min_area, max_area):
         return pd.DataFrame()
 
 def filter_house_by_pet(house_data, pet_preference):
-    if pet_preference == 'yes':
-        selected_rows = house_data[house_data['Pets'] == 'yes']
+    if pet_preference == 'Yes':
+        selected_rows = house_data[house_data['Pets'] == 'Yes']
         return selected_rows
     else:
-        selected_rows = house_data[house_data['Pets'] == 'no']
+        selected_rows = house_data[house_data['Pets'] == 'No']
         return selected_rows
 
 def filter_house_by_rooms(house_data, roomnumber):
@@ -232,7 +232,7 @@ def main():
     min_area, max_area = map(float, input("What is the size of the apartment you are looking for? (specify in square meters and separate by comma): ").split(","))
     filtered_houses = filter_houses_by_area(filtered_houses, min_area, max_area)
 
-    pet_preference = input("Do you have a pet? (yes/no): ")
+    pet_preference = input("Do you have a pet? (Yes/No): ")
     filtered_houses = filter_house_by_pet(filtered_houses, pet_preference)
 
     roomnum = int(input("How many rooms do you want in your apartment: "))
