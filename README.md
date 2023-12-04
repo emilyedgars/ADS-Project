@@ -47,7 +47,7 @@ This is an example from our real code to show the structure of a dictionary.
 
 # Datasets:
 
-The datasets containing all the appartments information is generated randomly in the code:
+The datasets containing all the appartments information is randomly generated inside the code functions:
 ```
 random.seed(42)
 num_houses = 200
@@ -61,7 +61,7 @@ data = {
         'Pets': [random.choice(['yes', 'no']) for _ in range(num_houses)]
     }
 ```
-This code shows us how the data is created. However, to see the complete version of the code and the function that contains it please go to the 'CODE' foulder inside this repository.
+To see the complete version of the code and the function that contains it please go to the 'CODE' foulder inside this repository.
 
 The information about the students/users registered in our app comes from a Google forms survey: [here](https://docs.google.com/forms/d/e/1FAIpQLSdSy_nhyyBdQ4avUhnSphkRRb2X5sBGxJgc9Er5y6-B6ADczA/viewform?).
 
