@@ -206,18 +206,19 @@ def find_roommates(user_df, all_users_df):
 
 
     # Filter potential roommates based on compatibility
-    potential_roommates_df = all_users_df[
+    potential_roommates = all_users_df[
         (all_users_df['Pets'] == user_pets) &
         (all_users_df['Region'] == user_region) &
         (all_users_df['Location'] == user_location)
     ]
 
-    return potential_roommates_df
+    return potential_roommates
 
-def gender_preference(user_df,all_users_df):
-  user_gender = user_df['Gender'].iloc[0]
-  potential_roommates = all_users_df[all_users_df['Gender']==user_gender]
-  return potential_roommates
+def gender_preference(user_df, all_users_df):
+    user_gender = user_df['Gender'].iloc[0]
+    potential_roommates = all_users_df[all_users_df['Gender'] == user_gender]
+    return potential_roommates
+
 
 def main():
     houses_data = creatdata()
@@ -250,13 +251,12 @@ def main():
     print(filtered_houses)
 
     print('\n')
-
     dataset = all_users_df
-    roommates = find_roommates(user_df,dataset)
+    roommates = find_roommates(user_df, dataset)
     gender_pref = input("Do you want to be matched to the same gender (yes/no): ")
     if gender_pref == 'yes':
-      return gender_preference(user_df,potential_roommates)
-
-    print("Potential Roommates:\n", potential_roommates)
+        print("Potential Roommates:\n", gender_preference(user_df, roommates))
+    else:
+        print("Potential Roommates:\n", roommates)
 
 main()
